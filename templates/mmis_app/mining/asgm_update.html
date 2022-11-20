@@ -1,0 +1,24 @@
+{% extends 'mmis_app/base2.html' %}
+
+    {% block title %} Artisanal and Small-Scale Gold Mining (ASGM) {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+<form action="/asgm_read/{{asgm.asgm_id}}" method="POST" autocomplete="off">
+    <h3>UPDATE DATA</h3>
+
+    {% csrf_token %}
+
+   {{form|crispy}}
+
+<div class="mt-5">
+    <button type="submit" class="btn btn-success btn-width" value="submit"> Update </button>
+
+</div>
+</form>
+
+</div>
+
+{%  endblock %}
