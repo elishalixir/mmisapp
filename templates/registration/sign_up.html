@@ -1,0 +1,22 @@
+{% extends 'mmis_app/base.html' %}
+
+{% block title %} logout {% endblock %}
+
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form action="/sign_up/" method="POST">
+    <h3>Sign Up</h3>
+
+    {% csrf_token %}
+       {{form|crispy}}
+    <p>Have an account? Sign In <a href="/login"> Here</a></p>
+   <div class="row d-flex justify-content-center text-center">
+       <button type="submit" class="btn btn-success" value="submit"> Sign Up </button>
+   </div>
+<!--    The 'button' could be replaced with 'input' without the closing tag-->
+</form>
+
+{% endblock %}
+

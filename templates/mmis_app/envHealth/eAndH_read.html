@@ -1,0 +1,41 @@
+{% extends 'mmis_app/base2.html' %}
+    {% block title %} Environment & Health {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <h5 class="card p-2 bg-warning text-center mb-3">ENVIRONMENT AND HEALTH </h5>
+<button id="add-data-btn"><a style="color: white;" href="/eAndH_create/" target="_blank">Add Data</a></button>
+<table class="table table-bordered table-hover dt-responsive " style="text-align: center;">
+    <thead class="table-success">
+          <tr>
+            <th style="width: 80%"> Submitted </th>
+            <th style="width: 10%"> Created</th>
+              <th style="width: 10%"> Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for eAndH in eAndH_read %}
+          <tr>
+              <td> {{eAndH.submitted}} </td>
+              <td> {{eAndH.created_at}} </td>
+              <td class="bg-success">
+
+                  <a href="/eAndH_edit/{{eAndH.id}}" class="btn btn-sm">
+                      <i class="fas fa-pen f-size"></i> Edit
+                  </a>
+                  <a href="/eAndH_delete/{{ eAndH.id }}" class="btn btn-sm text-light">
+                      <i class="fas fa-trash-alt f-size"></i> Delete
+                  </a>
+              </td>
+              {% empty %}
+              <td colspan="6" style="color: #ff7f7f;">No records found   </td>
+          </tr>
+    {% endfor %}
+        </tbody>
+</table>
+
+</div>
+{%  endblock content %}
+

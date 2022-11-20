@@ -1,0 +1,246 @@
+{% extends 'mmis_app/base2.html' %}
+
+    {% block title %} Artisanal and Small-Scale Gold Mining (ASGM) {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+<form action="/asgm_update/{{asgm.id}}" method="POST" autocomplete="off">
+    <h3>UPDATE DATA</h3>
+
+    {% csrf_token %}
+
+<div>
+        <p>1. How many people are engaged in ASGM mining IN Nigeria?</p>
+   <div>
+            <input type="text" name="one" value="{{asgm.one}}" >
+        </div>
+            </div>
+
+            <div>
+        <p>2. Are women and children involved in the ASGM activities? What is their population ("
+                     "Men, Women and Children)</p>
+            <div>
+            <input type="text" name="two" value="{{asgm.two}}" >
+        </div>   </div>
+
+                        <div>
+        <p>3. How much gold do ASG miners produce annually? in g, Kg or tonnes</p>
+            <div>
+            <input type="text" name="three" value="{{asgm.three}}" >
+        </div>   </div>
+
+                                    <div>
+        <p>4. What is the range of the karat of gold produced?</p>
+            <div>
+            <input type="text" name="four" value="{{asgm.four}}" >
+        </div>   </div>
+
+                                                <div>
+        <p>5. Do the miners use mercury for mining? Where do they get Mercury from?</p>
+            <div>
+            <input type="text" name="five" value="{{asgm.five}}" >
+        </div>   </div>
+
+                                                            <div>
+        <p>6. Is mercury added to the whole ore (before or during crushing) or to concentrates?</p>
+            <div>
+            <input type="text" name="six" value="{{asgm.six}}" >
+        </div>   </div>
+
+                                                                        <div>
+        <p>7. Is there open burning of mercury to amalgamate sponge gold?</p>
+            <div>
+            <input type="text" name="seven" value="{{asgm.seven}}" >
+        </div>   </div>
+
+                    <div>
+        <p>8. Are there issues of cross-borders trade or activities involved in ASGM activities?"
+                     " ( If yes please list types of activities, countries... etc)</p>
+                                                                            <div>
+            <input type="text" name="eight" value="{{asgm.eight}}" >
+        </div>   </div>
+
+                                <div>
+        <p>9. Are the miners organized in cooperatives? How many cooperatives are registered?"</p>
+            <div>
+            <input type="text" name="nine" value="{{asgm.nine}}" >
+        </div>  </div>
+
+                                            <div>
+        <p>10. Are there Small scale gold mining in Nigeria? Do they use mercury? How many companies?</p>
+            <div>
+            <input type="text" name="ten" value="{{asgm.ten}}" >
+        </div>  </div>
+
+
+                                                                    <div>
+        <p>11.  Are there large scale gold mining in Nigeria? Do they use mercury? How many companies?</p>
+            <div>
+            <input type="text" name="eleven" value="{{asgm.eleven}}" >
+        </div>  </div>
+
+                                                                                <div>
+        <p>12. Are any of these companies currently working with ASG miners? Are any in direct conflict "
+                     "with ASG miners?</p>
+            <div>
+            <input type="text" name="twelve" value="{{asgm.twelve}}" >
+        </div>  </div>
+
+                                                                                            <div>
+        <p>13. What is the scale of the impacts the MINING is having on the landscape and other "
+                     "environmental media?</p>
+            <div>
+            <input type="text" name="thirteen" value="{{asgm.thirteen}}" >
+        </div>  </div>
+
+                                                                                                        <div>
+        <p>14. Is there intensive deforestation, conflict with protected areas, land use conflicts with "
+                     "farmers, rising unemployment etc.?</p>
+            <div>
+            <input type="text" name="fourteen" value="{{asgm.fourteen}}" >
+        </div>  </div>
+
+
+        <div> <p>15. Do Miners throw away “dirty” Hg? </p>
+            <div>
+            <input type="text" name="fifteen" value="{{asgm.fifteen}}" >
+        </div>
+              </div>
+
+              <div> <p>16. Is all Hg used released to the environment?</p>
+            <div>
+            <input type="text" name="sixteen" value="{{asgm.sixteen}}" >
+        </div>
+                    </div>
+
+<div> <p>17. What is the available capacity for environmental monitoring?</p>
+            <div>
+            <input type="text" name="seventeen" value="{{asgm.seventeen}}" >
+        </div>
+      </div>
+
+            <div> <p>18. What is the available capacity for human bio-monitoring of mercury exposure?</p>
+                <div>
+            <input type="text" name="eighteen" value="{{asgm.eighteen}}" >
+        </div>
+                  </div>
+                                      <div>
+        <p>19. Do you know current level of environmental contamination (or) exposure? </p>
+            <div>
+            <input type="text" name="nineteen" value="{{asgm.nineteen}}" >
+        </div>  </div>
+
+            <div> <p>20. How many environmental media (air, land and water) have been impacted?</p>
+                <div>
+            <input type="text" name="twenty" value="{{asgm.twenty}}" >
+        </div>
+                  </div>
+
+            <div> <p>21. Are there water bodies near mining Sites? Is it used for domestic use e.g drinking?</p>
+                <div>
+            <input type="text" name="twenty_one" value="{{asgm.twenty_one}}" >
+        </div>
+                  </div>
+
+            <div> <p>22. Is it polluted by mining activities?</p>
+                <div>
+            <input type="text" name="twenty_two" value="{{asgm.twenty_two}}" >
+        </div>
+                  </div>
+
+                <div> <p>23.  Do the communities at the Site engage in high fish consumption levels?</p>
+            <div>
+            <input type="text" name="twenty_three" value="{{asgm.twenty_three}}" >
+        </div>
+                      </div>
+
+                    <div> <p>24. Are there any communities or areas NEAR MINING SITE or BENEFICIATING SITE considered to be "
+                     "particularly impacted or vulnerable to health effects of ASGM?</p>
+            <div>
+            <input type="text" name="twenty_four" value="{{asgm.twenty_four}}" >
+        </div>
+                          </div>
+
+                        <div> <p>25. Is any burning of the amalgam in residential areas or burning the amalgam in open areas "
+                     "–within 500metres?</p>
+            <div>
+            <input type="text" name="twenty_five" value="{{asgm.twenty_five}}" >
+        </div>   </div>
+
+                            <div> <p>26. If yes, are women and children around the open burning?</p>
+            <div>
+            <input type="text" name="twenty_six" value="{{asgm.twenty_six}}" >
+        </div>   </div>
+
+                            <div> <p>27. Are there any studies or data on environmental contamination or health impacts from ASGM in "
+                     "Nigeria?</p>
+            <div>
+            <input type="text" name="twenty_seven" value="{{asgm.twenty_seven}}" >
+        </div>   </div>
+
+
+                            <div> <p>28. Do you have an estimate for mercury emissions or releases?</p>
+            <div>
+            <input type="text" name="twenty_eight" value="{{asgm.twenty_eight}}" >
+        </div>   </div>
+
+                            <div> <p>29. What are the estimates (if any)</p>
+            <div>
+            <input type="text" name="twenty_nine" value="{{asgm.twenty_nine}}" >
+        </div>   </div>
+
+                            <div> <p>30. Are the miners aware of the health and environmental effects of mercury?</p>
+            <div>
+            <input type="text" name="thirty" value="{{asgm.thirty}}" >
+        </div>   </div>
+
+                            <div> <p>31. Are miners sensitive to price of mercury OR ARE THEY WORRIED ABOUT THE PRICE OF MERCURY?</p>
+            <div>
+            <input type="text" name="thirty_one" value="{{asgm.thirty_one}}" >
+        </div>   </div>
+
+                            <div> <p>32. Does the price of Mercury affect their activities at anytime?</p>
+            <div>
+            <input type="text" name="thirty_two" value="{{asgm.thirty_two}}" >
+        </div>   </div>
+
+                            <div> <p>33. Does their mining assist in reducing poverty in the family?</p>
+            <div>
+            <input type="text" name="thirty_three" value="{{asgm.thirty_three}}" >
+        </div>   </div>
+
+                            <div> <p>34. Has there been any miner environmental awareness raising campaigns and/or worker health and "
+                     "safety campaigns?</p>
+            <div>
+            <input type="text" name="twenty_four" value="{{asgm.twenty_four}}" >
+        </div>   </div>
+
+
+                            <div> <p>35. Are there any existing health care or social
+                                service programs geared towards the miners and/or gold processing communities
+                                (such as AIDs awareness, health promotion, water sanitation and/or worker health and safety programs)?</p>
+            <div>
+            <input type="text" name="twenty_five" value="{{asgm.twenty_five}}" >
+        </div>   </div>
+
+                            <div> <p>36. Do the miners / mining communities at the Site have adequate access to health care?</p>
+            <div>
+            <input type="text" name="twenty_six" value="{{asgm.twenty_six}}" >
+        </div>   </div>
+
+
+<div class="mt-5">
+    <button type="submit" class="btn btn-success btn-width" value="submit"> Update </button>
+
+</div>
+</form>
+
+</div>
+
+{%  endblock %}
+<!--TO BE WORKED ON AS I DID IN ENVIRONMENT AND HEALTH-->
+
+<!--==================================-->
+

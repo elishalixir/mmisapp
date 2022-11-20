@@ -1,0 +1,177 @@
+{% extends 'mmis_app/base2.html' %}
+
+    {% block title %} Mercury Added Products {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+<form action="/eAndH_update/{{eAndH.id}}" method="POST" autocomplete="off">
+    <h3>UPDATE DATA</h3>
+
+    {% csrf_token %}
+
+        <div>
+        <p>1.	Types of Waste Collected:</p>
+   <div>
+            <input type="text" name="one" value="{{eAndH.one}}" >
+        </div>
+            </div>
+
+            <div>
+        <p>2. What is the volume of waste disposed in (Kg) and the frequency:</p>
+            <div>
+            <input type="text" name="two" value="{{eAndH.two}}" >
+        </div>   </div>
+
+                        <div>
+        <p>3.	Are the waste sorted:</p>
+            <div>
+            <input type="text" name="three" value="{{eAndH.three}}" >
+        </div>   </div>
+
+                                    <div>
+        <p>4.	Are there mercury products in contained in the waste e.g Electric bulbs florescent tubes, thermometers etc</p>
+            <div>
+            <input type="text" name="four" value="{{eAndH.four}}" >
+        </div>   </div>
+
+                                                <div>
+        <p>5.	What method of disposal/recycling is carried:</p>
+            <div>
+            <input type="text" name="five" value="{{eAndH.five}}" >
+        </div>   </div>
+
+                                                            <div>
+        <p>6.	Is there any control measures in place to mitigate against or reduce the environmental hazards/degradation from the mercury contained waste</p>
+            <div>
+            <input type="text" name="six" value="{{eAndH.six}}" >
+        </div>   </div>
+
+                                                                        <div>
+        <p>7.	If yes, Kindly indicate what control measure is available, if No state 'N/A'</p>
+            <div>
+            <input type="text" name="seven" value="{{eAndH.seven}}" >
+        </div>   </div>
+
+                    <div>
+        <p>8.	Is there any measurement of Mercury in your waste collected and in Kg?</p>
+                                                                            <div>
+            <input type="text" name="eight" value="{{eAndH.eight}}" >
+        </div>   </div>
+
+                                <div>
+        <p>9.	Is there any emission reduction devices? </p>
+            <div>
+            <input type="text" name="nine" value="{{eAndH.nine}}" >
+        </div>  </div>
+
+                                            <div>
+        <p>10.	Is there any form of Particulate Matter (PM) Reduction?</p>
+            <div>
+            <input type="text" name="ten" value="{{eAndH.ten}}" >
+        </div>  </div>
+
+
+                                                                    <div>
+        <p>11.  If yes above, do you use acid gas control with Limestone or any similar acid
+                     gas absorbent?</p>
+            <div>
+            <input type="text" name="eleven" value="{{eAndH.eleven}}" >
+        </div>  </div>
+
+                                                                                <div>
+        <p>12.	Do you use mercury specific absorbent? (Kg Hg/Year)</p>
+            <div>
+            <input type="text" name="twelve" value="{{eAndH.twelve}}" >
+        </div>  </div>
+
+                                                                                            <div>
+        <p>13. Kindly state other necessary information below that can help this research work:</p>
+            <div>
+            <input type="text" name="thirteen" value="{{eAndH.thirteen}}" >
+        </div>  </div>
+
+                                                                                                        <div>
+        <p>14.	Tonnes/year of municipal waste incinerated</p>
+            <div>
+            <input type="text" name="fourteen" value="{{eAndH.fourteen}}" >
+        </div>  </div>
+
+
+        <div> <p>15.	Tonnes/year of hazardous waste incinerated</p>
+            <div>
+            <input type="text" name="fifteen" value="{{eAndH.fifteen}}" >
+        </div>
+              </div>
+
+              <div> <p>16.	Tonnes/year of medical waste incinerated</p>
+            <div>
+            <input type="text" name="sixteen" value="{{eAndH.sixteen}}" >
+        </div>
+                    </div>
+
+<div> <p>17.	Tonnes/year of sewage sludge incinerated</p>
+            <div>
+            <input type="text" name="seventeen" value="{{eAndH.seventeen}}" >
+        </div>
+      </div>
+
+            <div> <p>18.	Tonnes/year of domestic waste disposed off at dumpsite</p>
+                <div>
+            <input type="text" name="eighteen" value="{{eAndH.eighteen}}" >
+        </div>
+                  </div>
+                                      <div>
+        <p>19.	Tonnes/year waste burned</p>
+            <div>
+            <input type="text" name="nineteen" value="{{eAndH.nineteen}}" >
+        </div>  </div>
+
+            <div> <p>20.	Tonnes/year Sewage sludge incinerated</p>
+                <div>
+            <input type="text" name="twenty" value="{{eAndH.twenty}}" >
+        </div>
+                  </div>
+
+            <div> <p>21.	Tonnes/year of Open fire waste burning (on landfills and informally)</p>
+                <div>
+            <input type="text" name="twenty_one" value="{{eAndH.twenty_one}}" >
+        </div>
+                  </div>
+
+            <div> <p>22.	What other technology do you use in treating waste?</p>
+                <div>
+            <input type="text" name="twenty_two" value="{{eAndH.twenty_two}}" >
+        </div>
+                  </div>
+
+                <div> <p>23.	What other pollution control mechanisms do you have in place?</p>
+            <div>
+            <input type="text" name="twenty_three" value="{{eAndH.twenty_three}}" >
+        </div>
+                      </div>
+
+                    <div> <p>24.	What are your challenges?</p>
+            <div>
+            <input type="text" name="twenty_four" value="{{eAndH.twenty_four}}" >
+        </div>
+                          </div>
+
+                        <div> <p>25.	What are your Suggestions/Recommendation?</p>
+            <div>
+            <input type="text" name="twenty_five" value="{{eAndH.twenty_five}}" >
+        </div>   </div>
+
+
+<div class="mt-5">
+    <button type="submit" class="btn btn-success btn-width" value="submit"> Update </button>
+
+</div>
+</form>
+
+</div>
+
+<!--==================================-->
+
+{%  endblock %}

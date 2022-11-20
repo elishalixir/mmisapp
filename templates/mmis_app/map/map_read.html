@@ -1,0 +1,49 @@
+{% extends 'mmis_app/base2.html' %}
+    {% block title %} Environment & Health {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <h5 class="card p-2 bg-warning text-center mb-3">DOMESTIC PRODUCTION, PROCESSING AND IMPORT
+        OF PRODUCTS WITH INTENTIONAL MERCURY USE</h5>
+<button id="add-data-btn"><a style="color: white;" href="/map_create/" target="_blank">Add Data</a></button>
+<table class="table table-bordered table-hover dt-responsive " style="text-align: center;">
+        <thead class="table-success">
+          <tr>
+              <th style="width: 15%"> Mercury Product/<br>chemicals </th>
+            <th style="width: 35%"> Item </th>
+            <th style="width: 15%"> Produced/imported</th>
+            <th style="width: 15%"> Annual Consumption/<br>Production</th>
+            <th style="width: 10%"> Year for<br>data provided</th>
+              <th style="width: 10%"> Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for map in map_read %}
+          <tr>
+              <td> {{map.mercury_compound}} </td>
+              <td> {{map.item}} </td>
+              <td> {{map.imported}} </td>
+              <td> {{map.consumption_or_production}} </td>
+              <td> {{map.year}} </td>
+              <td class="bg-success">
+                  <a href="/map_edit/{{map.id}}" class="btn btn-sm">
+                      <i class="fas fa-pen f-size"></i> Edit
+                  </a>
+
+
+                  <a href="/map_delete/{{ map.id }}" class="btn btn-sm text-light">
+                      <i class="fas fa-trash-alt f-size"></i> Delete
+                  </a>
+              </td>
+          <tr>
+              {% empty %}
+              <td colspan="6" style="color: #ff7f7f;">No records found   </td>
+          </tr>
+    {% endfor %}
+        </tbody>
+</table>
+</div>
+{%  endblock content %}
+

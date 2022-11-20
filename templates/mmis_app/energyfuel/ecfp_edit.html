@@ -1,0 +1,52 @@
+{% extends 'mmis_app/base2.html' %}
+
+    {% block title %} Mercury Added Products {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+<form action="/ecfp_update/{{ecfp.id}}" method="POST" autocomplete="off">
+    <h3>UPDATE DATA</h3>
+
+    {% csrf_token %}
+    <div>
+        <p>Energy Consumption/Fuel Production</p>
+        <div>
+            <input type="text" name="energy_fuel" value="{{ecfp.energy_fuel}}" >
+        </div>
+    </div>
+
+    <div>
+
+    <div>
+        <p>Produced/Imported</p>
+        <div>
+            <input type="text" name="imported" value="{{ecfp.imported}}" >
+        </div>
+    </div>
+
+    <div>
+        <p>Annual Consumption / Production</p>
+        <div>
+            <input type="text" name="consumption_or_production" value="{{ecfp.consumption_or_production}}" >
+        </div>
+    </div>
+
+    <div>
+        <p>Year</p>
+        <div>
+            <input type="date" name="year" value="{{ecfp.year}}" >
+        </div>
+    </div>
+
+
+<div class="mt-5">
+    <button type="submit" class="btn btn-success btn-width" value="submit"> Update </button>
+
+</div>
+</form>
+
+</div>
+
+{%  endblock %}

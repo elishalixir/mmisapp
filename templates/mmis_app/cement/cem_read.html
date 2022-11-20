@@ -1,0 +1,47 @@
+{% extends 'mmis_app/base2.html' %}
+
+    {% block title %} Environment & Health {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <h5 class="card p-2 bg-warning text-center mb-3">CEMENT</h5>
+<button id="add-data-btn"><a style="color: white;" href="/cem_create/" target="_blank">Add Data</a></button>
+<table class="table table-bordered table-hover dt-responsive " style="text-align: center;">
+        <thead class="table-success">
+          <tr>
+            <th style="width: 45%"> Does your operation cover any of the following activities?</th>
+            <th style="width: 10%"> Yes or No</th>
+            <th style="width: 20%"> Annual Consumption/<br>Production</th>
+            <th style="width: 15%"> Year for<br>data provided</th>
+              <th style="width: 10%"> Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for cem in cem_read %}
+          <tr>
+              <td> {{cem.operation_cover}} </td>
+              <td> {{cem.yes}} </td>
+              <td> {{cem.consumption_or_production}} </td>
+              <td> {{cem.year}} </td>
+              <td class="bg-success">
+                  <a href="/cem_edit/{{cem.id}}" class="btn btn-sm">
+                      <i class="fas fa-pen f-size"></i> Edit
+                  </a>
+
+
+                  <a href="/cem_delete/{{ cem.id }}" class="btn btn-sm text-light">
+                      <i class="fas fa-trash-alt f-size"></i> Delete
+                  </a>
+              </td>
+              </td>
+              {% empty %}
+              <td colspan="6" style="color: #ff7f7f;">No records found   </td>
+          </tr>
+    {% endfor %}
+        </tbody>
+</table>
+</div>
+{%  endblock content%}
+

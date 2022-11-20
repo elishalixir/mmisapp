@@ -1,0 +1,26 @@
+{% extends 'mmis_app/base2.html' %}
+
+    {% block title %} Mercury Added Products {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+<form action="/map_create/" method="POST" autocomplete="off">
+    <h3>ADD DATA</h3>
+
+    {% csrf_token %}
+       {{form.mercury_compound|as_crispy_field}}
+       {{form.item|as_crispy_field}}
+        {{form.imported|as_crispy_field}}
+        {{form.consumption_or_production|as_crispy_field}}
+        {{form.year|as_crispy_field}}
+<div class="mt-5">
+    <button type="submit" class="btn btn-success btn-width" value="submit"> Submit </button>
+    <button type="reset" class="btn btn-secondary ms-2 btn-width" value="submit"> Reset </button>
+</div>
+</form>
+
+</div>
+
+{%  endblock %}
