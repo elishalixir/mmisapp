@@ -151,7 +151,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "MMIS",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "img/logo.svg",
+    "site_logo": "logo.svg",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
