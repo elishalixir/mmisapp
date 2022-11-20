@@ -83,18 +83,11 @@ WSGI_APPLICATION = 'pceh.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'pcehmmisdb',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'ayinla1234',
-        # 'HOST': 'localhost',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dc7ct7pnq9hbuv',
-        'USER': 'hbugccrdcivxyq',
-        'PASSWORD': '4848ab0de8ea33d69dfdde2968a29f4561cfac5a4c09ab525349797372e40bd2',
-        'HOST': 'ec2-44-195-100-240.compute-1.amazonaws.com',
+        'NAME': 'd3tln4m7a1fmb9',
+        'USER': 'wijlmoyknwghhv',
+        'PASSWORD': '0eefeef6d097522c3f205d3219482b5ef270815a34910d636376acad3eb295a7',
+        'HOST': 'ec2-52-200-215-149.compute-1.amazonaws.com',
         'PORT': '5432'
 
     }
