@@ -83,12 +83,8 @@ WSGI_APPLICATION = 'pceh.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd3tln4m7a1fmb9',
-        'USER': 'wijlmoyknwghhv',
-        'PASSWORD': '0eefeef6d097522c3f205d3219482b5ef270815a34910d636376acad3eb295a7',
-        'HOST': 'ec2-52-200-215-149.compute-1.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
 
     }
 }
@@ -134,9 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-django_heroku.settings(locals())
+STATICFILES_DIR =[ os.path.join(BASE_DIR, 'static'),]
 
 
 

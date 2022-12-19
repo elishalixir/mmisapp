@@ -1,1 +1,1 @@
-web: gunicorn pceh.wsgi
+web: gunicorn pceh.wsgi --log-file -
